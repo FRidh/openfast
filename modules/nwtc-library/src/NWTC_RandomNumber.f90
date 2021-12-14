@@ -35,7 +35,7 @@ INTEGER, PARAMETER        :: LuxLevel       = 3       ! Luxury Level for RanLux 
 INTERFACE UniformRandomNumbers
 MODULE PROCEDURE UniformRandomNumbersR4   ! 4-byte reals
 MODULE PROCEDURE UniformRandomNumbersR8   ! 8-byte reals
-MODULE PROCEDURE UniformRandomNumbersR16  ! 16-byte reals
+!MODULE PROCEDURE UniformRandomNumbersR16  ! 16-byte reals
 END INTERFACE
 
 CONTAINS

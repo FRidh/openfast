@@ -106,20 +106,20 @@ MODULE NWTC_IO
 
       MODULE PROCEDURE AllR4Ary1       ! 1-dimensional array of SiKi reals
       MODULE PROCEDURE AllR8Ary1       ! 1-dimensional array of R8Ki reals
-      MODULE PROCEDURE AllR16Ary1      ! 1-dimensional array of QuKi reals
+!      MODULE PROCEDURE AllR16Ary1      ! 1-dimensional array of QuKi reals
       MODULE PROCEDURE AllR4Ary2       ! 2-dimensional array of SiKi reals
       MODULE PROCEDURE AllR8Ary2       ! 2-dimensional array of R8Ki reals
-      MODULE PROCEDURE AllR16Ary2      ! 2-dimensional array of QuKi reals
+!      MODULE PROCEDURE AllR16Ary2      ! 2-dimensional array of QuKi reals
 
       MODULE PROCEDURE AllR4Ary3       ! 3-dimensional array of SiKi reals
       MODULE PROCEDURE AllR8Ary3       ! 3-dimensional array of R8Ki reals
-      MODULE PROCEDURE AllR16Ary3      ! 3-dimensional array of QuKi reals
+!      MODULE PROCEDURE AllR16Ary3      ! 3-dimensional array of QuKi reals
       MODULE PROCEDURE AllR4Ary4       ! 4-dimensional array of SiKi reals
       MODULE PROCEDURE AllR8Ary4       ! 4-dimensional array of R8Ki reals
-      MODULE PROCEDURE AllR16Ary4      ! 4-dimensional array of QuKi reals
+!      MODULE PROCEDURE AllR16Ary4      ! 4-dimensional array of QuKi reals
       MODULE PROCEDURE AllR4Ary5       ! 5-dimensional array of SiKi reals
       MODULE PROCEDURE AllR8Ary5       ! 5-dimensional array of R8Ki reals
-      MODULE PROCEDURE AllR16Ary5      ! 5-dimensional array of QuKi reals
+!      MODULE PROCEDURE AllR16Ary5      ! 5-dimensional array of QuKi reals
    END INTERFACE
 
       !> \copydoc nwtc_io::allipary1
@@ -130,7 +130,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE AllRPAry2
       MODULE PROCEDURE AllR4PAry3
       MODULE PROCEDURE AllR8PAry3
-      MODULE PROCEDURE AllR16PAry3
+!      MODULE PROCEDURE AllR16PAry3
 !      MODULE PROCEDURE AllRPAry4   !not yet coded
    END INTERFACE
 
@@ -141,7 +141,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ParseLoVar                                             ! Parses an LOGICAL from a string.
       MODULE PROCEDURE ParseSiVar                                             ! Parses a single-precision REAL from a string.
       MODULE PROCEDURE ParseR8Var                                             ! Parses a double-precision REAL from a string.
-      MODULE PROCEDURE ParseQuVar                                             ! Parses a quad-precision REAL from a string.
+!      MODULE PROCEDURE ParseQuVar                                             ! Parses a quad-precision REAL from a string.
    END INTERFACE
 
       !> \copydoc nwtc_io::parsechvarwdefault
@@ -151,7 +151,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ParseLoVarWDefault                                     ! Parses an LOGICAL from a string, potentially sets to a default value if "Default" is parsed.
       MODULE PROCEDURE ParseSiVarWDefault                                     ! Parses a single-precision REAL from a string, potentially sets to a default value if "Default" is parsed.
       MODULE PROCEDURE ParseR8VarWDefault                                     ! Parses a double-precision REAL from a string, potentially sets to a default value if "Default" is parsed.
-      MODULE PROCEDURE ParseQuVarWDefault                                     ! Parses a quad-precision REAL from a string, potentially sets to a default value if "Default" is parsed.
+!      MODULE PROCEDURE ParseQuVarWDefault                                     ! Parses a quad-precision REAL from a string, potentially sets to a default value if "Default" is parsed.
    END INTERFACE
 
       !> \copydoc nwtc_io::parsedbary
@@ -160,7 +160,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ParseLoAry                                             ! Parse an array of LOGICAL values.
       MODULE PROCEDURE ParseSiAry                                             ! Parse an array of single-precision REAL values.
       MODULE PROCEDURE ParseR8Ary                                             ! Parse an array of double-precision REAL values.
-      MODULE PROCEDURE ParseQuAry                                             ! Parse an array of quad-precision REAL values.
+!      MODULE PROCEDURE ParseQuAry                                             ! Parse an array of quad-precision REAL values.
       MODULE PROCEDURE ParseChAry
    END INTERFACE
 
@@ -168,7 +168,7 @@ MODULE NWTC_IO
    INTERFACE CheckRealVar
       MODULE PROCEDURE CheckR4Var     ! 4-byte real
       MODULE PROCEDURE CheckR8Var     ! 8-byte real
-      MODULE PROCEDURE CheckR16Var    ! 16-byte real
+!      MODULE PROCEDURE CheckR16Var    ! 16-byte real
    END INTERFACE
    
       !> \copydoc nwtc_io::readcvar
@@ -178,7 +178,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ReadLVar
       MODULE PROCEDURE ReadR4Var     ! 4-byte real
       MODULE PROCEDURE ReadR8Var     ! 8-byte real
-      MODULE PROCEDURE ReadR16Var    ! 16-byte real
+!      MODULE PROCEDURE ReadR16Var    ! 16-byte real
    END INTERFACE
 
       !> \copydoc nwtc_io::readivarwdefault
@@ -188,7 +188,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ReadLVarWDefault      ! Logical
       MODULE PROCEDURE ReadR4VarWDefault     ! 4-byte real
       MODULE PROCEDURE ReadR8VarWDefault     ! 8-byte real
-      MODULE PROCEDURE ReadR16VarWDefault    ! 16-byte real
+!      MODULE PROCEDURE ReadR16VarWDefault    ! 16-byte real
    END INTERFACE
    
       !> \copydoc nwtc_io::readcary
@@ -201,8 +201,8 @@ MODULE NWTC_IO
       MODULE PROCEDURE ReadR4AryFromStr
       MODULE PROCEDURE ReadR8Ary  ! read array of 8-byte reals
       MODULE PROCEDURE ReadR8AryFromStr
-      MODULE PROCEDURE ReadR16Ary ! read array of 16-byte reals
-      MODULE PROCEDURE ReadR16AryFromStr
+!      MODULE PROCEDURE ReadR16Ary ! read array of 16-byte reals
+!      MODULE PROCEDURE ReadR16AryFromStr
    END INTERFACE
 
       !> \copydoc nwtc_io::readcarylines   
@@ -210,7 +210,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE ReadCAryLines
       MODULE PROCEDURE ReadR4AryLines
       MODULE PROCEDURE ReadR8AryLines
-      MODULE PROCEDURE ReadR16AryLines
+!      MODULE PROCEDURE ReadR16AryLines
 !     MODULE PROCEDURE ReadIAryLines         ! Not coded yet
 !     MODULE PROCEDURE ReadLAryLines         ! Not coded yet
    END INTERFACE
@@ -220,7 +220,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE Int2LStr        ! default integers
       MODULE PROCEDURE R2LStr4         ! 4-byte  reals
       MODULE PROCEDURE R2LStr8         ! 8-byte  reals
-      MODULE PROCEDURE R2LStr16        ! 16-byte reals
+!      MODULE PROCEDURE R2LStr16        ! 16-byte reals
    END INTERFACE
 
       !> \copydoc nwtc_io::dispnvd0
@@ -236,8 +236,8 @@ MODULE NWTC_IO
       MODULE PROCEDURE WrMatrix2R4     ! Two dimension matrix of SiKi
       MODULE PROCEDURE WrMatrix1R8     ! Single dimension matrix (Ary) of R8Ki
       MODULE PROCEDURE WrMatrix2R8     ! Two dimension matrix of R8Ki
-      MODULE PROCEDURE WrMatrix1R16    ! Single dimension matrix (Ary) of QuKi
-      MODULE PROCEDURE WrMatrix2R16    ! Two dimension matrix of QuKi
+!      MODULE PROCEDURE WrMatrix1R16    ! Single dimension matrix (Ary) of QuKi
+!      MODULE PROCEDURE WrMatrix2R16    ! Two dimension matrix of QuKi
    END INTERFACE
 
       !> \copydoc nwtc_io::wrpartialmatrix1r8
@@ -251,7 +251,7 @@ MODULE NWTC_IO
       MODULE PROCEDURE WrIAryFileNR
       MODULE PROCEDURE WrR4AryFileNR
       MODULE PROCEDURE WrR8AryFileNR
-      MODULE PROCEDURE WrR16AryFileNR
+!      MODULE PROCEDURE WrR16AryFileNR
    END INTERFACE
 
 CONTAINS

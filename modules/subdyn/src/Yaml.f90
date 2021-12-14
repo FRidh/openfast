@@ -32,8 +32,8 @@ module YAML
       module procedure yaml_write_array1R8  ! Single dimension array (Ary) of R8Ki
       module procedure yaml_write_array2R8  ! Two dimension array of R8Ki
       module procedure yaml_write_array2I   ! Two dimension array of IntKi
-      module procedure yaml_write_array1R16 ! Single dimension array (Ary) of QuKi
-      module procedure yaml_write_array2R16 ! Two dimension array of QuKi
+!      module procedure yaml_write_array1R16 ! Single dimension array (Ary) of QuKi
+!      module procedure yaml_write_array2R16 ! Two dimension array of QuKi
    end interface
 
    !> Write list to file
@@ -41,7 +41,7 @@ module YAML
       module procedure yaml_write_listI   ! Single dimension array (Ary) of IntKi
       module procedure yaml_write_listR4  ! Single dimension array (Ary) of SiKi
       module procedure yaml_write_listR8  ! Single dimension array (Ary) of R8Ki
-      module procedure yaml_write_listR16 ! Single dimension array (Ary) of QuKi
+!      module procedure yaml_write_listR16 ! Single dimension array (Ary) of QuKi
    end interface
    
    !> Write variable to file
@@ -50,7 +50,7 @@ module YAML
       module procedure yaml_write_varI   ! IntKi
       module procedure yaml_write_varR4  ! SiKi
       module procedure yaml_write_varR8  ! R8Ki
-      module procedure yaml_write_varR16 ! QuKi
+!      module procedure yaml_write_varR16 ! QuKi
    end interface
    private
 

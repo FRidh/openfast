@@ -96,21 +96,21 @@ MODULE NWTC_Num
    INTERFACE EqualRealNos
       MODULE PROCEDURE EqualRealNos4
       MODULE PROCEDURE EqualRealNos8
-      MODULE PROCEDURE EqualRealNos16
+!      MODULE PROCEDURE EqualRealNos16
    END INTERFACE
 
       !> \copydoc nwtc_num::eulerconstructr4()
    INTERFACE EulerConstruct
       MODULE PROCEDURE EulerConstructR4
       MODULE PROCEDURE EulerConstructR8
-      MODULE PROCEDURE EulerConstructR16
+!      MODULE PROCEDURE EulerConstructR16
    END INTERFACE
    
       !> \copydoc nwtc_num::eulerextractr4()
    INTERFACE EulerExtract
       MODULE PROCEDURE EulerExtractR4
       MODULE PROCEDURE EulerExtractR8
-      MODULE PROCEDURE EulerExtractR16
+!      MODULE PROCEDURE EulerExtractR16
    END INTERFACE
 
       !> \copydoc nwtc_num::taitbryanyxzextractr4()
@@ -118,20 +118,20 @@ MODULE NWTC_Num
    INTERFACE TaitBryanYXZExtract
       MODULE PROCEDURE TaitBryanYXZExtractR4
       MODULE PROCEDURE TaitBryanYXZExtractR8
-      MODULE PROCEDURE TaitBryanYXZExtractR16
+!      MODULE PROCEDURE TaitBryanYXZExtractR16
    END INTERFACE
    
    INTERFACE TaitBryanYXZConstruct
       MODULE PROCEDURE TaitBryanYXZConstructR4
       MODULE PROCEDURE TaitBryanYXZConstructR8
-      MODULE PROCEDURE TaitBryanYXZConstructR16
+!      MODULE PROCEDURE TaitBryanYXZConstructR16
    END INTERFACE
 
       !> \copydoc nwtc_num::outerproductr4
    INTERFACE OuterProduct
       MODULE PROCEDURE OuterProductR4
       MODULE PROCEDURE OuterProductR8
-      MODULE PROCEDURE OuterProductR16
+!      MODULE PROCEDURE OuterProductR16
    END INTERFACE
 
       !> \copydoc nwtc_num::cross_productr4()
@@ -140,7 +140,7 @@ MODULE NWTC_Num
       MODULE PROCEDURE Cross_ProductR4R8
       MODULE PROCEDURE Cross_ProductR8
       MODULE PROCEDURE Cross_ProductR8R4
-      MODULE PROCEDURE Cross_ProductR16
+!      MODULE PROCEDURE Cross_ProductR16
    END INTERFACE
    
       !> \copydoc nwtc_num::smllrottransd()
@@ -160,21 +160,21 @@ MODULE NWTC_Num
    INTERFACE Zero2TwoPi
       MODULE PROCEDURE Zero2TwoPiR4
       MODULE PROCEDURE Zero2TwoPiR8
-      MODULE PROCEDURE Zero2TwoPiR16
+!      MODULE PROCEDURE Zero2TwoPiR16
    END INTERFACE
    
       !> \copydoc nwtc_num::twonormr4
    INTERFACE TwoNorm
       MODULE PROCEDURE TwoNormR4
       MODULE PROCEDURE TwoNormR8
-      MODULE PROCEDURE TwoNormR16
+!      MODULE PROCEDURE TwoNormR16
    END INTERFACE
    
       !> \copydoc nwtc_num::tracer4
    INTERFACE trace
       MODULE PROCEDURE traceR4
       MODULE PROCEDURE traceR8
-      MODULE PROCEDURE traceR16
+!      MODULE PROCEDURE traceR16
    END INTERFACE
    
       !> \copydoc nwtc_num::dcm_expd
@@ -213,18 +213,18 @@ MODULE NWTC_Num
    INTERFACE InterpStp
       MODULE PROCEDURE InterpStpComp4
       MODULE PROCEDURE InterpStpComp8
-      MODULE PROCEDURE InterpStpComp16
+!      MODULE PROCEDURE InterpStpComp16
       MODULE PROCEDURE InterpStpReal4
       MODULE PROCEDURE InterpStpReal4_8
       MODULE PROCEDURE InterpStpReal8
-      MODULE PROCEDURE InterpStpReal16
+!      MODULE PROCEDURE InterpStpReal16
    END INTERFACE
 
       !> \copydoc nwtc_num::interparrayr4
    INTERFACE InterpArray
       MODULE PROCEDURE InterpArrayR4
       MODULE PROCEDURE InterpArrayR8
-      MODULE PROCEDURE InterpArrayR16
+!      MODULE PROCEDURE InterpArrayR16
    END INTERFACE
 
       !> \copydoc nwtc_num::interpwrappedstpreal4
@@ -232,51 +232,51 @@ MODULE NWTC_Num
       MODULE PROCEDURE InterpWrappedStpReal4
       MODULE PROCEDURE InterpWrappedStpReal4_8
       MODULE PROCEDURE InterpWrappedStpReal8
-      MODULE PROCEDURE InterpWrappedStpReal16
+!      MODULE PROCEDURE InterpWrappedStpReal16
    END INTERFACE
    
       !> \copydoc nwtc_num::locatestpr4
    INTERFACE LocateStp
       MODULE PROCEDURE LocateStpR4
       MODULE PROCEDURE LocateStpR8
-      MODULE PROCEDURE LocateStpR16
+!      MODULE PROCEDURE LocateStpR16
    END INTERFACE
 
    !> \copydoc nwtc_num::skewsymmatr4
    INTERFACE SkewSymMat
       MODULE PROCEDURE SkewSymMatR4
       MODULE PROCEDURE SkewSymMatR8
-      MODULE PROCEDURE SkewSymMatR16
+!      MODULE PROCEDURE SkewSymMatR16
    END INTERFACE
    
       !> \copydoc nwtc_num::angle_extrapinterp2_r4
    INTERFACE Angles_ExtrapInterp
       MODULE PROCEDURE Angles_ExtrapInterp1_R4
       MODULE PROCEDURE Angles_ExtrapInterp1_R8
-      MODULE PROCEDURE Angles_ExtrapInterp1_R16
+!      MODULE PROCEDURE Angles_ExtrapInterp1_R16
       MODULE PROCEDURE Angles_ExtrapInterp1_R4R
       MODULE PROCEDURE Angles_ExtrapInterp1_R8R
-      MODULE PROCEDURE Angles_ExtrapInterp1_R16R
+!      MODULE PROCEDURE Angles_ExtrapInterp1_R16R
       MODULE PROCEDURE Angles_ExtrapInterp2_R4
       MODULE PROCEDURE Angles_ExtrapInterp2_R8
-      MODULE PROCEDURE Angles_ExtrapInterp2_R16
+!      MODULE PROCEDURE Angles_ExtrapInterp2_R16
       MODULE PROCEDURE Angles_ExtrapInterp2_R4R
       MODULE PROCEDURE Angles_ExtrapInterp2_R8R
-      MODULE PROCEDURE Angles_ExtrapInterp2_R16R
+!      MODULE PROCEDURE Angles_ExtrapInterp2_R16R
    END INTERFACE
 
       !> \copydoc nwtc_num::addorsub2pi_r4
    INTERFACE AddOrSub2Pi
       MODULE PROCEDURE AddOrSub2Pi_R4
       MODULE PROCEDURE AddOrSub2Pi_R8
-      MODULE PROCEDURE AddOrSub2Pi_R16
+!      MODULE PROCEDURE AddOrSub2Pi_R16
    END INTERFACE
    
       !> \copydoc nwtc_num::mpi2pi_r4
    INTERFACE MPi2Pi
       MODULE PROCEDURE MPi2Pi_R4
       MODULE PROCEDURE MPi2Pi_R8
-      MODULE PROCEDURE MPi2Pi_R16
+!      MODULE PROCEDURE MPi2Pi_R16
    END INTERFACE
    
 CONTAINS

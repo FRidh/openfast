@@ -40,19 +40,20 @@ INTEGER, PARAMETER              :: B4Ki     = SELECTED_INT_KIND(  9 )           
 INTEGER, PARAMETER              :: B8Ki     = SELECTED_INT_KIND( 18 )           !< Kind for eight-byte whole numbers
 
 #ifdef HAS_FORTRAN2008_FEATURES
-INTEGER, PARAMETER              :: QuKi     = real128    !< Kind for 16-byte, floating-point numbers
+!INTEGER, PARAMETER              :: QuKi     = real128    !< Kind for 16-byte, floating-point numbers
 INTEGER, PARAMETER              :: R8Ki     = real64     !< Kind for eight-byte floating-point numbers
 INTEGER, PARAMETER              :: SiKi     = real32     !< Kind for four-byte, floating-point numbers
 #else
-INTEGER, PARAMETER              :: QuKi     = SELECTED_REAL_KIND( 20, 500 )     !< Kind for 16-byte, floating-point numbers
+!INTEGER, PARAMETER              :: QuKi     = SELECTED_REAL_KIND( 20, 500 )     !< Kind for 16-byte, floating-point numbers
 INTEGER, PARAMETER              :: R8Ki     = SELECTED_REAL_KIND( 14, 300 )     !< Kind for eight-byte floating-point numbers
 INTEGER, PARAMETER              :: SiKi     = SELECTED_REAL_KIND(  6,  30 )     !< Kind for four-byte, floating-point numbers
 #endif
 
 INTEGER, PARAMETER              :: BYTES_IN_SiKi =  4                           !< Number of bytes per SiKi number
 INTEGER, PARAMETER              :: BYTES_IN_R8Ki =  8                           !< Number of bytes per R8Ki number 
-INTEGER, PARAMETER              :: BYTES_IN_QuKi = 16                           !< Number of bytes per QuKi number
 
+INTEGER, PARAMETER              :: QuKi     = 8 !< this build doesn't allow quad precision
+INTEGER, PARAMETER              :: BYTES_IN_QuKi = 8                           !< Number of bytes per QuKi number
 
 
       ! The default kinds for reals and integers, and the number of bytes they contain:
