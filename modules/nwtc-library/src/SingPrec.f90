@@ -52,8 +52,8 @@ INTEGER, PARAMETER              :: SiKi     = SELECTED_REAL_KIND(  6,  30 )     
 INTEGER, PARAMETER              :: BYTES_IN_SiKi =  4                           !< Number of bytes per SiKi number
 INTEGER, PARAMETER              :: BYTES_IN_R8Ki =  8                           !< Number of bytes per R8Ki number 
 
-INTEGER, PARAMETER              :: QuKi     = 8 !< this build doesn't allow quad precision
-INTEGER, PARAMETER              :: BYTES_IN_QuKi = 8                           !< Number of bytes per QuKi number
+INTEGER, PARAMETER              :: QuKi          = R8Ki                         !< this build doesn't allow quad precision
+INTEGER, PARAMETER              :: BYTES_IN_QuKi = BYTES_IN_R8Ki                !< Number of bytes per QuKi number
 
 
       ! The default kinds for reals and integers, and the number of bytes they contain:
