@@ -242,6 +242,24 @@ SUBROUTINE OpenCon
 
 !   CALL FlushOut ( CU )
 
+#ifdef CONSOLE_FILE
+      ! MODIFIED to write all text to an output file (see SUBROUTINE OpenFOutFile())
+
+
+      ! Local declarations.
+
+   INTEGER                      :: IOS                                          ! I/O status of OPEN.
+
+
+   OPEN ( CU , FILE='CONSOLE.TXT' , STATUS='UNKNOWN', FORM='FORMATTED', IOSTAT=IOS, ACTION="WRITE"   )
+
+   IF ( IOS /= 0 )  THEN
+!     CALL WrScr( ' Cannot open CONSOLE.TXT. Another program like MS Excel may have locked it for writing.' )
+      CALL ProgExit ( 1 )
+   END IF
+
+#endif
+
    RETURN
 END SUBROUTINE OpenCon
 !=======================================================================
