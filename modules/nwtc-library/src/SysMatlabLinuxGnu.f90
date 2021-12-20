@@ -61,7 +61,11 @@ MODULE SysSubs
    END INTERFACE
 
    INTEGER, PARAMETER            :: ConRecL     = 120                               ! The record length for console output.
+#ifdef CONSOLE_FILE
+   INTEGER, PARAMETER            :: CU          = 7                                 ! The I/O unit for the console.  Unit 6 causes ADAMS to crash.
+#else
    INTEGER, PARAMETER            :: CU          = 6                                 ! The I/O unit for the console.  Unit 6 causes ADAMS to crash.
+#endif
    INTEGER, PARAMETER            :: MaxWrScrLen = 98                                ! The maximum number of characters allowed to be written to a line in WrScr
    LOGICAL, PARAMETER            :: KBInputOK   = .FALSE.                           ! A flag to tell the program that keyboard input is allowed in the environment.
    CHARACTER(*),  PARAMETER      :: NewLine     = ACHAR(10)                         ! The delimiter for New Lines [ Windows is CHAR(13)//CHAR(10); MAC is CHAR(13); Unix is CHAR(10) {CHAR(13)=\r is a line feed, CHAR(10)=\n is a new line}]
@@ -288,6 +292,9 @@ SUBROUTINE ProgExit ( StatCode )
    !    END IF
    !    STOP 1
    ! END IF
+#ifdef CONSOLE_FILE
+   CLOSE ( CU )
+#endif   
 
 END SUBROUTINE ProgExit ! ( StatCode )
 !=======================================================================
@@ -352,13 +359,20 @@ SUBROUTINE WrNR ( Str )
       ! This routine writes out a string to the screen without following it with a new line.
 
    CHARACTER(*), INTENT(IN)     :: Str       ! The string to write to the screen.
+
+#ifdef CONSOLE_FILE
+
+   WRITE (CU,'(1X,A)',ADVANCE='NO')  Str
+
+#else   
    INTEGER                      :: Stat      ! Number of characters printed
    INTEGER, EXTERNAL            :: mexPrintF ! Matlab function to print to the command window
    CHARACTER(1024), SAVE        :: Str2      ! bjj: need static variable to print to Matlab command window
 
    Str2 = ' '//Str
    Stat = mexPrintF( Str2 )
-   
+#endif
+
    RETURN
 END SUBROUTINE WrNR ! ( Str )
 !=======================================================================
@@ -381,7 +395,18 @@ SUBROUTINE WriteScr ( Str, Frm )
 
    CHARACTER(*), INTENT(IN)     :: Str       ! The input string to write to the screen.
    CHARACTER(*), INTENT(IN)     :: Frm       ! Format specifier for the output.
-   INTEGER                      :: ErrStat   ! Error status of write operation (so code doesn't crash)
+#ifdef CONSOLE_FILE
+
+   INTEGER                      :: ErrStat                                      ! Error status of write operation (so code doesn't crash)
+
+
+   IF ( LEN_TRIM(Str)  < 1 ) THEN
+      WRITE ( CU, '()', IOSTAT=ErrStat )
+   ELSE
+      WRITE ( CU, Frm, IOSTAT=ErrStat ) TRIM(Str)
+   END IF
+
+#else
    INTEGER, EXTERNAL            :: mexPrintF ! Matlab function to print to the command window
    INTEGER                      :: Stat      ! Number of characters printed to the screen
    CHARACTER( 1024 ), SAVE      :: Str2      ! A temporary string (Str written with the Frm Format specification) (bjj: this apparently needs to be a static variable so it writes to the Matlab command window)
@@ -394,6 +419,7 @@ SUBROUTINE WriteScr ( Str, Frm )
 
    Str2 = trim(Str2)//NewLine
    Stat = mexPrintF( Str2 )
+#endif
 
 END SUBROUTINE WriteScr ! ( Str )
 !=======================================================================
