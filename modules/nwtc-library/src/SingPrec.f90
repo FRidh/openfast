@@ -63,17 +63,14 @@ INTEGER, PARAMETER              :: BYTES_IN_INT   = 4                           
 
 #if !defined (DOUBLE_PRECISION) && !defined (OPENFAST_DOUBLE_PRECISION)
 INTEGER, PARAMETER              :: ReKi           = SiKi                        !< Default kind for floating-point numbers
-INTEGER, PARAMETER              :: DbKi           = R8Ki                        !< Default kind for double floating-point numbers
-                                                  
 INTEGER, PARAMETER              :: BYTES_IN_REAL  = BYTES_IN_SiKi               !< Number of bytes per ReKi number     - use SIZEOF()
-INTEGER, PARAMETER              :: BYTES_IN_DBL   = BYTES_IN_R8Ki               !< Number of bytes per DbKi number     - use SIZEOF()
 #else
 INTEGER, PARAMETER              :: ReKi           = R8Ki                        !< Default kind for floating-point numbers
-INTEGER, PARAMETER              :: DbKi           = QuKi                        !< Default kind for double floating-point numbers
-
 INTEGER, PARAMETER              :: BYTES_IN_REAL  = BYTES_IN_R8Ki               !< Number of bytes per ReKi number     - use SIZEOF()
-INTEGER, PARAMETER              :: BYTES_IN_DBL   = BYTES_IN_QuKi               !< Number of bytes per DbKi number     - use SIZEOF()
 #endif
+
+INTEGER, PARAMETER              :: DbKi           = R8Ki                        !< Default kind for double floating-point numbers
+INTEGER, PARAMETER              :: BYTES_IN_DBL   = BYTES_IN_R8Ki               !< Number of bytes per DbKi number     - use SIZEOF()
 
 
 END MODULE Precision
